@@ -1,56 +1,23 @@
-<div class="col-lg-4">
-  <!-- about -->
-  <div class="widget">
-    {{ with .Site.GetPage "/about" }}
-    <h4 class="widget-title">{{ .Title | markdownify }}</h4>
-    {{ if .Params.Image }}
-    <img src="{{ .Params.Image | absURL }}" alt=""
-      class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-    {{ end }}
-    <p>{{ .Summary }}</p>
-    <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a>
-    {{ end }}
-  </div>
-  <!-- category -->
-  <div class="widget">
-    <h4 class="widget-title">Category</h4>
-    {{- if isset .Site.Taxonomies "categories" }}
-    {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
-    <ul class="list-unstyled">
-      {{- range $name, $items := .Site.Taxonomies.categories }}
-      <li><a
-          href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a>
-      </li>
-      {{- end }}
+<div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+    <div class="logo-title">
+        <div class="title">
+            <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture">
+            <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
+            <div class="description">
+                <p>{{ .Site.Params.description }}</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        {{ range $item := .Site.Params.socialIcons }}
+            <li>
+                <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+                    <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        {{ end }}
     </ul>
-    {{- end }}
-    {{- end }}
-  </div>
-  <!-- Tags -->
-  <div class="widget">
-    <h4 class="widget-title">Tag</h4>
-    {{- if isset .Site.Taxonomies "tags" }}
-    {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
-    <ul class="list-inline">
-      {{- range $name, $items := .Site.Taxonomies.tags }}
-      <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-          href="{{ `tags/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | humanize }}</a></li>
-      {{- end }}
-    </ul>
-    {{- end }}
-    {{- end }}
-  </div>
-  <!-- social -->
-  <div class="widget">
-    <h4 class="widget-title">Social</h4>
-    <ul class="list-inline social-links">
-      {{ range .Site.Params.social }}
-      <li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
-      {{ end }}
-    </ul>
-  </div>
-  <!-- advertisement -->
-  <div class="widget">
-    <img src="{{`images/promotion.png` | absURL}}" alt="" class="img-fluid">
-  </div>
+    <div class="footer">
+        <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ if isset .Site.Params "copyright" }} {{ .Site.Params.copyright }} {{ else }} {{ now.Format "2006"}} {{end}}</div>
+    </div>
 </div>

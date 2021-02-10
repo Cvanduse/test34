@@ -1,141 +1,101 @@
-######################## default configuration ####################
-baseURL = "https://examplesite.com"
-languageCode = "en-us"
-title = "Liva | Personal blog template"
-theme = "liva-hugo"
-summaryLength = "10"
-paginate = 6
-disqusShortname = ""
+baseURL = "https://example.com"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "Website of Jane Doe"
+theme = "anatole"
+summarylength = 10
+enableEmoji = true
+enableRobotsTXT = true
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+# Enable Disqus
+#disqusShortname = ""
 
-############################# Plugins ##############################
-[params.plugins]
+# Google Analytics
+#googleAnalytics = "UA-123-45"
 
-  # CSS Plugins
-  [[params.plugins.css]]
-  URL = "plugins/bootstrap/bootstrap.min.css"
-  [[params.plugins.css]]
-  URL = "plugins/slick/slick.css"
-  [[params.plugins.css]]
-  URL = "plugins/themify-icons/themify-icons.css"
-  [[params.plugins.css]]
-  URL = "plugins/venobox/venobox.css"
+# Syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
 
-  # JS Plugins
-  [[params.plugins.js]]
-  URL = "plugins/jQuery/jquery.min.js"
-  [[params.plugins.js]]
-  URL = "plugins/bootstrap/bootstrap.min.js"
-  [[params.plugins.js]]
-  URL = "plugins/slick/slick.min.js"
-  [[params.plugins.js]]
-  URL = "plugins/venobox/venobox.min.js"
-  [[params.plugins.js]]
-  URL = "plugins/search/fuse.min.js"
-  [[params.plugins.js]]
-  URL = "plugins/search/mark.js"
-  [[params.plugins.js]]
-  URL = "plugins/search/search.js"
+[params]
+title = "I'm Jane Doe"
+author = "Jane Doe"
+#copyright = "2020-2021"
+description = "Call me Jane"
+profilePicture = "images/profile.jpg"
+keywords = ""
+favicon = "favicons/"
+# example ["css/custom.css"]
+customCss = []
+# example ["js/custom.js"]
+customJs = [] 
+mainSections = ["post"]
+images = ["images/site-feature-image.png"]
+doNotLoadAnimations = false
+# Form Spree Contact Form
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+# Google Site Verify
+#googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+# indexDateFormat = "Mon, Jan 2, 2006"
+# listDateFormat = "Jan 2"
+# singleDateFormat = "Mon, Jan 2, 2006"
 
+[params.simpleAnalytics]
+# enable = true
+# customurl = "https://analytics.example.com"
 
-############################## navigation ###############################
+## Math settings
+[params.math]
+enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "katex"  # options: "katex", "mathjax". default is "katex".
+
+## Social links
+# use 'fab' when brand icons, use 'fas' when standard solid icons.
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://de.linkedin.com/"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/lxndrblz/anatole/"
+
+[[params.socialIcons]]
+icon = "fab fa-instagram"
+title = "instagram"
+url = "https://www.instagram.com/"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:mail@alexbilz.com"
+
+## Menu items
+
 [menu]
 
-  # main menu
   [[menu.main]]
-  name = "About"
-  URL = "about"
-  weight = 1
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
 
   [[menu.main]]
-  name = "Post"
-  URL = "blog"
-  weight = 2
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
 
   [[menu.main]]
   name = "Contact"
-  URL = "contact"
-  weight = 3
-
-  # footer menu
-  [[menu.footer]]
-  name = "About"
-  URL = "about"
-  weight = 1
-
-  [[menu.footer]]
-  name = "Post"
-  URL = "blog"
-  weight = 2
-
-  [[menu.footer]]
-  name = "Contact"
-  URL = "contact"
-  weight = 3
-
-
-#################### default parameters ################################
-[params]
-logo = "images/logo.png"
-home = "Home"
-# Meta data
-description = "This is meta description"
-author = "Themefisher"
-# Google Analitycs
-googleAnalitycsID = "Your ID"
-# Contact Information
-mobile = "0124857985320"
-email = "demo@email.com"
-location = "Dhaka, Bangladedsh"
-# copyright
-copyright = "| copyright &copy; 2020 [Themefisher](https://themefisher.com) All Rights Reserved |"
-
-  # Preloader
-  [params.preloader]
-  enable = true
-  preloader = "" # use .png , .svg or .gif format
-
-  # search
-  [params.search]
-  enable = true
-
-############################ news letter ########################
-[params.newsletter]
-enable = true
-title = "Join Our Newsletter"
-content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero"
-
-
-# cookies
-[params.cookies]
-enable = true
-expire_days = 2
-
-
-############################# social site ########################
-[[params.social]]
-title = "facebook"
-icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-title = "twitter"
-icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-title = "instagram"
-icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-title = "github"
-icon = "ti-github" # themify icon : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-title = "linkedin"
-icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
-link = "#"
+  weight = 400
+  identifier = "contact"
+  url = "/contact/"

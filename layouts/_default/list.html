@@ -1,28 +1,21 @@
 {{ define "main" }}
-
-<!-- blog post -->
-<section class="section-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          {{ $paginator := .Paginate .Data.Pages }}
-          {{ range $paginator.Pages }}
-          {{ .Render "post" }}
-          {{ end }}
-        </div>
-      </div>
-      <!-- sidebar -->
-      {{ partial "sidebar.html" . }}
-      <!-- /sidebar -->
-
-      <!-- pagination -->
-      <div class="col-12 mt-5">
-        {{ template "_internal/pagination.html" . }}
-      </div>
+    <div class="archive {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+        <ul class="list-with-title">
+            {{ range .Data.Pages.GroupByDate "2006" }}
+                <div class="listing-title">{{ .Key }}</div>
+                {{ range .Pages }}
+                    <ul class="listing">
+                        <div class="listing-item">
+                            <div class="listing-post"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                                <div class="post-time"><span class="date">{{ if isset .Site.Params "listdateformat" }} 
+                                                                            {{ .Date.Format .Site.Params.listDateFormat }}
+                                                                            {{ else }} {{.Date.Format "Jan 2"}} 
+                                                                            {{ end }}</span></div>
+                            </div>
+                        </div>
+                    </ul>
+                {{ end }}
+            {{ end }}
+        </ul>
     </div>
-  </div>
-</section>
-<!-- /blog post -->
-
 {{ end }}

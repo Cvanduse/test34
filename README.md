@@ -1,57 +1,450 @@
-<div align="center">
-  <h1><a href="https://gethugothemes.com/products/liva-hugo/">Liva Hugo Template(MIT License)</a></h1>
-  <img src="https://user-images.githubusercontent.com/37659754/67829978-3984f800-fb03-11e9-82d2-a38490c6ceaf.gif" width="100%" alt="Liva Blog template by themefisher">
-</div>
+# Anatole ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/ee7a5df4-b944-4e03-853d-39219c96d484/deploy-status)](https://alexbilz.com/)
 
+Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme based on farbox-theme-Anatole.
 
-**Liva Blog Templates -** Liva is an expedite, cozy, gorgeous responsive personal blog template. It’s  with well-planned attention for a personal blog site. It features an affluent search bar that allows your  to find out their desired blog post quickly. Moreover, beginners friendly feature allows for easy and customization. The functional features allow you the basic customization of your website effortlessly. Liva is based on the bootstrap framework and responsive to all modern devices and browsers.
-  
-**The images are only for demonstration purpose, Please don't use those images.**
+![Screenshot Anatole Theme](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot.png)
+![Screenshot Anatole Theme (dark)](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot_dark.png)
 
-## Table of Contents
+## Features
 
-* [Demo](#demo)
-* [Installation](#installation)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions-(paid))
-* [Licensing](#licensing)
-* [More Hugo Themes](https://gethugothemes.com/shop/)
+Anatole's aims to be minimalistic and sleek, but still brings some great functionality.
 
-## Demo
+### Features include
 
-[Live Preview](http://demo.themefisher.com/liva-hugo/)
+- Profile picture and slogan
+- Dark mode
+- Navigation items
+- Pagination
+- Multilingual
+- Post Thumbnails (optional)
+- 100⁄100 Google Lighthouse score
+- Google Analytics (optional)
+- Comments powered by Disqus or Utteranc.es (optional)
+- SimpleAnalytics (optional)
+- Katex support (optional)
+- Formspree Contact Form (optional)
+- Twitter Cards support
+- MIT License
+- Fontawesome 5.15.1 icons
+- Custom CSS (optional)
+- Custom JavaScript (optional)
+- Medium like zoom for images
+- Compliant to strict CSP
+- Syntax highlighting
+- Uses Hugo pipes to process assets
 
-## Installation
+## Preview the exampleSite
 
-Navigate to your themes folder in your Hugo site and use the following commands:
-
-**Note : You must use `hugo-extended` version to compile SCSS**
-
+```shell
+git clone https://github.com/lxndrblz/anatole.git anatole
+cd anatole/exampleSite
+hugo server --themesDir ../..
 ```
-  $ mkdir themes
-  $ cd themes
-  $ git clone https://github.com/themefisher/liva-hugo.git
+
+## Quick Start
+
+1. Add the repository into your Hugo Project repository as a submodule: `git submodule add https://github.com/lxndrblz/anatole.git themes/anatole`.
+2. Configure your `config.toml`. Feel free to copy the demo `config.toml` and some content from the exampleSite.
+3. Build your site with `hugo serve` and admire the result at `http://localhost:1313/`.
+
+## Update your installation
+
+If you want to get the latest update of the `Anatole` theme please execute this command:
+
+```shell
+git submodule update --remote --merge
 ```
 
-## Issues
+## Modifying the config.toml
 
-We use GitHub Issues as the official bug tracker for the **Liva Theme.** Please Search [existing issues](https://github.com/themefisher/liva-hugo/issues). It’s possible someone has already reported the same problem.
+Ìn this section I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/blob/master/exampleSite/config.toml) can be found in the exampleSite folder.
 
-If your problem or idea is not addressed yet, [open a new issue](https://github.com/themefisher/liva-hugo/issues/new)
+### Profile picture and slogan
 
-## Technical Support or Questions (Paid)
+```toml
+[params]
+title = "I'm Jane Doe"
+author = "Jane Doe"
+description = "Call me Jane"
+profilePicture = "images/profile.jpg"
+```
 
-If you have questions or need help integrating the product please [contact us](mailto:mehedi@themefisher.com) instead of opening an issue.
+### Favicon
 
-## Licensing
-Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)
+Add you own favicon in `static/favicons/favicon.ico`.
 
-**Code License:** Released under the [MIT](https://github.com/themefisher/liva-hugo/blob/master/LICENSE) license.
+### Copyright
+By default the copyright, will show the current year, but you can change this by configuring the `copyright` parameter.
+```toml
+copyright = "2020-2021"
+```
 
-**Image license:** The images are only for demonstration purposes. They have their own licence, we don't have permission to share those image.
+### Navigation items
 
-## Premium Themes
+Non-content entries can be added right from the `config.toml` file.
 
-| [![Mega-Bundle-HUGO](https://gethugothemes.com/wp-content/uploads/edd/2019/09/Mega-Bundle-HUGO.png)](https://themefisher.com/products/hugo-mega-bundle/) | [![reader](https://gethugothemes.com/wp-content/uploads/edd/2020/09/Reader.jpg)](https://gethugothemes.com/products/reader/) | [![logbook](https://gethugothemes.com/wp-content/uploads/edd/2020/03/logbook-hugo.jpg)](https://gethugothemes.com/products/logbook-hugo/) |
-|:---:|:---:|:---:|
-| **Hugo Mega Bundle**  | **Galaxy**  | **LogBook**  |
+```toml
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+```
+
+### Prefer dark theme
+
+You can easily enable the dark mode from the `config.toml` all you have to do is to set the parameter `displayMode` to `dark`. If you don't specify any displayMode, then the light version will be loaded.
+
+Please also note that returning visitors will see the theme that was last displayed to them on your site. If your user has his system configured to dark mode, then this will also take precedence over the `displayMode` set in the `config.toml`.
+
+```toml
+[params]
+displayMode = "dark"
+```
+
+### Disable Theme Switcher
+You can easily disable the theme switcher from the `config.toml`. All you have to do is to set the parameter `disableThemeSwitcher` to `true`.
+```toml
+[params]
+disableThemeSwitcher = true # Theme switcher is enabled by default
+```
+
+### Disable Animations
+You can easily disable the animations from the `config.toml`. All you have to do is to set the parameter `doNotLoadAnimations` to `true`.
+```toml
+[params]
+doNotLoadAnimations = true # Animations are loaded by default
+```
+
+### Control the date Format
+You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
+```toml
+[params]
+singleDateFormat = "Mon, Jan 2, 2006"
+indexDateFormat = "Mon, Jan 2, 2006"
+listDateFormat = "Jan 2"
+```
+
+### Have a static page as a home page
+If you prefer having a static page as your home page rather than a listing of the latest posts, then make sure you leave the `mainSections` parameter blank:
+```toml
+[params]
+  mainSections = []
+```
+Put any content into the `_index.md` file located in the content directory. If you want, you can also have some static text and the posts below. In such case, simply keep the `mainSections = ["post"]` and put any static content in the `_index.md`.
+
+### Multilingual support
+
+Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
+
+```toml
+[Languages]
+  [Languages.en]
+  title = "My blog"
+  weight = 1
+  LanguageName = "EN"
+
+  [Languages.de]
+  title = "Mein blog"
+  description = "Ich bin Jane"
+  weight = 2
+  LanguageName = "DE"
+```
+
+There are two ways of translating your content either by adding a suffix in the filename eg. `mypost.de.md` or by setting a contentDir (a certain directory) for each language. [Link to the Hugo documentation](https://gohugo.io/content-management/multilingual/). If you want to use the option with the `contentDir`, you will have to add the `contentDir` parameter for each language:
+
+```toml
+[languages]
+  [languages.en]
+    contentDir = "content/english"
+    languageName = "EN"
+    weight = 1
+```
+
+To make sure your menu is linking to the correct localized content, make sure that you customize the menu items to include the language prefix. Your menu might look like the following:
+
+```toml
+[[Languages.de.menu.main]]
+url    = "/de/"
+identifier = "home"
+name   = "Startseite"
+weight = 100
+
+[[Languages.de.menu.main]]
+name = "Beiträge"
+weight = 200
+identifier = "posts"
+url = "/de/post/"
+
+[[Languages.de.menu.main]]
+name = "Über"
+weight = 300
+identifier = "about"
+url = "/de/about/"
+```
+
+Anatole currently ships with support for some basic languages. Contributions for other language translations are welcome.
+
+### :100: Google Lighthouse score
+
+The theme is optimized to adhere to the requirements checked for in the Lighthouse Audit. On my [personal site](https://www.alexbilz.com) I was able to reach a perfect 100⁄100 score.
+![Google Lighthouse Score](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/lighthouse.png)
+
+### Comments powered by Disqus
+
+No comment section is shown on the `single.html`, unless a Disqus code is specified in the `config.toml` file.
+
+```toml
+disqusShortname = "XXX"
+```
+
+### Comments powered by Utteranc.es
+
+No comment section is shown on the `single.html` unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation}(https://utteranc.es/).
+
+```toml
+[params.utterances]
+repo = "githubuser/reponame"
+issueTerm = "pathname"
+theme= "preferred-color-scheme"
+# label = 
+```
+Two notes on the security of Utteranc.es
+- If you are using a strict CSP, you'll have to add the domain to it. 
+- The script currently has no built-in integrity check, due to limitations of [Utterances](https://github.com/utterance/utterances/issues/40).
+### Google Analytics
+
+To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.
+
+```toml
+googleAnalytics = "UA-123-45"
+```
+
+### Simple Analytics
+
+To use Simple Analytics, it has to be enabled by setting the parameter to true. If you are using a custom subdomain to evade Adblockers, then specify the URL without a trailing slash.
+
+```toml
+[params.simpleAnalytics]
+enable = true
+# customurl = "https://analytics.example.com"
+```
+
+### Google Site Verification
+
+To use Google Site Verification, add the following line to the `[params]`:
+
+```toml
+[params]
+googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+```
+
+Replace the hash with the one Google provided you.
+
+### Beautiful math functions
+
+```toml
+## Math settings
+[params.math]
+enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "katex"  # options: "katex", "mathjax". default is "katex".
+```
+### Formspree Contact Form on the Contact page
+Step 1: Configure the `contactFormAction` in the `config.toml`
+```toml
+[params]
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+```
+Step 2: Activate the `contact: true` or  `contact=true` in the frontmatter of a page. See `exampleSite/content/contact.html` as an example.
+### Twitter Cards support
+
+In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.
+
+In the `config.toml` you can configure a site feature image. This image will be displayed, if no image is defined in the frontmatter of a page.
+
+```toml
+[params]
+  images = ["images/site-feature-image.png"]
+```
+
+To define a custom image of a page, you might want to add the following to the frontmatter of a post.
+
+```toml
+images = ["post-cover.png"]
+```
+
+### Post Thumbnails
+Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter of a post to an image such as `"images/landscape.jpg"`.
+```md
++++
+...
+tags = [
+    "thumbnail",
+]
+thumbnail= "images/landscape.jpg"
++++
+```
+Make sure to put the image in the `static/images/` directory.
+
+### Custom CSS
+
+You can add your custom CSS files with the `customCss` parameter of the configuration file. Put your files into the `assets/css` directory.
+
+```toml
+customCss = ["css/custom.css", "css/styles.css"]
+```
+
+On the user-side it will look like this:
+
+```text
+.
+└── assets
+    └── css
+        ├── custom.css
+        └── styles.css
+```
+
+### Custom JavaScript
+
+You can add your custom JS files with the `customJs` parameter of the configuration file. Put your files into the `assets/js` directory.
+
+```toml
+[params]
+customJs = ["js/hello.js", "js/world.js"]
+```
+
+On the user-side it will look like this:
+
+```text
+.
+└── assets
+    └── js
+        ├── hello.js
+        └── world.js
+```
+
+`hello.js` and `world.js` will be bundled into a `custom.min.js`.
+
+You can also include links to remote javascript files (hosted on CDNs for example). But be aware, that integrity settings and minification won't be applied. Further make sure to adjust your CSP. You can load a remote script like this:
+
+```toml
+[params]
+customJs = ["http://cdn.exmple.org/fancyscript.js"]
+```
+
+Both approaches can even be mixed:
+
+```toml
+[params]
+customJs = ["https://cdn.exmple.org/fancyscript.js", "js/world.js"]
+```
+
+### Content Security Policy
+
+The theme is compliant with most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:
+
+```text
+Content-Security-Policy "
+  base-uri 'self';
+  connect-src 'self';
+  default-src 'self';
+  frame-ancestors 'none';
+  font-src 'self' cdnjs.cloudflare.com;
+  img-src 'self';
+  object-src 'none';
+  script-src 'self';
+  style-src 'self' cdnjs.cloudflare.com;
+"
+```
+
+If you want to configure the security headers for a site running on Netlify, you want to make sure you create a special `_headers` file in your sites static folder. The content might look like the following:
+
+```text
+/*
+  X-Frame-Options: DENY
+  X-Clacks-Overhead: "GNU Terry Pratchett"
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+  Content-Security-Policy:  base-uri 'self'; connect-src 'self'; default-src 'self'; frame-ancestors 'none'; font-src 'self' cdnjs.cloudflare.com; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' cdnjs.cloudflare.com;
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+```
+
+### Configurable pagination section
+
+You can configure the pages shown on the front page by altering the `mainSections` parameter:
+
+```toml
+[params]
+  mainSections = ["post", "docs"]
+```
+
+### Robots.txt
+
+If you want Hugo to generate a robots.txt, you will have to set the `enableRobotsTXT` in the `config.toml` to `true`. By default a robots.txt, which allows search engine crawlers to access to any page, will be generated. It will look like this:
+
+```text
+User-agent: *
+```
+
+If certain sites should be excluded from being accessed, you might want to setup a custom robots.txt file within your `static` folder of your site.
+
+### Syntax highlighting
+
+This theme has support for either Hugo's lightning-fast Chroma code highlighting. See the [Hugo docs](https://gohugo.io/content-management/syntax-highlighting/) for more information.
+
+To enable Chroma, add the following to your site parameters:
+
+```toml
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+```
+
+Then, you can generate a different style by running:
+
+```shell
+hugo gen chromastyles --style=monokailight > assets/css/syntax.css
+```
+
+If you get any errors, make sure the `assets/css/` directory exists within your sites root folder.
+Include the newly generated `syntax.css` like a standard custom CSS script:
+
+```toml
+[params]
+customCss = ["css/syntax.css"]
+```
+
+## License
+
+Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).
+
+## Maintenance
+
+This theme is maintained by its author [Alexander Bilz](https://github.com/lxndrblz) and with the help from these awesome [contributors](https://github.com/lxndrblz/anatole/graphs/contributors). Please open an issue/pull request if you want to contribute to making this theme better and more feature-complete. For PRs please make sure that they align with theme's goals: minimalism, speed and elegance.  
+
+## Sponsoring
+
+If you like this theme, give it a star on GitHub, and consider supporting its development:
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lxndrblz/)
+
+
+## Special Thanks 🎁
+
+- Go to [Cai Cai](https://github.com/hi-caicai), for the great Anatole Farbox theme that formed the foundation for this theme.
+- Go to [Kareya Saleh](https://unsplash.com/photos/tLKOj6cNwe0) for providing the profile picture in the exampleSite.
+- Go to [Ales Krivec](https://unsplash.com/photos/4miBe6zg5r0) for providing the thumbnail picture in the exampleSite post.

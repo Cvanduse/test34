@@ -1,12 +1,21 @@
-name = "Liva Hugo"
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Anatole"
 license = "MIT"
-licenselink = "https://github.com/themefisher/liva-hugo/blob/master/LICENSE"
-description = "Hugo port of the Themefisher’s Liva Template"
-homepage = "https://gethugothemes.com/products/liva-hugo/"
-tags = ['landing-page', 'fast', 'light', 'white', 'modern', 'themefisher', 'hugo-theme', 'hugo-templates', 'bootstrap', 'blog', 'responsive', 'clean', 'simple', 'creative', 'contact-form', 'custom-themes', 'mobile', 'minimalistic', 'gethugothemes', 'resume', 'portfolio', 'google analytics', 'customizable', 'flexbox', 'presentation', 'product', 'theme', 'typography']
-features = ['bootstrap','responsive']
-min_version = "0.58.0"
+licenselink = "https://github.com/lxndrblz/anatole/blob/master/LICENSE"
+description = "Anatole is a beautiful minimalist two-column hugo theme based on farbox-theme-Anatole."
+homepage = "https://github.com/lxndrblz/anatole/"
+tags = ["blog", "responsive", "clean", "minimalist", "minimal", "personal", "dark"]
+features = ["blog", "seo", "responsive", "mobile", "disqus", "fontawesome", "analytics", "math"]
+min_version = "0.53.0"
 
 [author]
-  name = "Themefisher"
-  homepage = "https://themefisher.com/"
+  name = "Alexander Bilz"
+  homepage = "https://alexbilz.com"
+
+# If porting an existing theme
+[original]
+  author = "Cai Cai"
+  homepage = "https://www.caicai.me/"
+  repo = "https://github.com/hi-caicai/farbox-theme-Anatole"

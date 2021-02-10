@@ -1,41 +1,97 @@
 <head>
-  <meta charset="utf-8">
-  <title>{{ .Site.Title }}</title>
+    <title> {{.Site.Params.author}}{{ with .Title }} | {{ . }}{{ end }} </title>
 
-  {{ "<!-- mobile responsive meta -->" | safeHTML }}
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-  {{ hugo.Generator }}
+    <!-- Meta -->
+    <meta charset="utf-8">
+    {{- hugo.Generator -}}
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{- if .Site.Params.googleSiteVerify }}
+    <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
+    {{- end -}}
 
-  {{ "<!-- plugins -->" | safeHTML }}
-  {{ range .Site.Params.plugins.css }}
-  <link rel="stylesheet" href="{{ .URL | absURL }} ">
-  {{ end }}
+    <!-- CSS -->
+    {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet"
+          href="{{ $style.Permalink }}"
+          integrity="{{ $style.Data.Integrity }}"
+          crossorigin="anonymous"
+          type="text/css">
+    {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet"
+        href="{{ $markupHighlightStyle.Permalink }}"
+        integrity="{{ $markupHighlightStyle.Data.Integrity }}"
+        crossorigin="anonymous"
+        type="text/css">
+    {{ range .Site.Params.customCss }}
+        {{ $minstyles := resources.Get . }}
+        {{ $styles := $minstyles | resources.Minify | resources.Fingerprint }}
+        <link rel="stylesheet"
+        href="{{ $styles.Permalink }}"
+        integrity="{{ $styles.Data.Integrity }}"
+        crossorigin="anonymous"
+        media="screen" />
+    {{ end }}
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
 
-  {{ "<!-- Main Stylesheet -->" | safeHTML }}
-  {{ $styles := resources.Get "scss/style.scss" | toCSS | minify }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | absURL }}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | absURL }}favicon-16x16.png">
 
-  {{ "<!--Favicon-->" | safeHTML }}
-  <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
-  <link rel="icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
+    <link rel="canonical" href="{{ .Permalink }}">
 
-  {{ "<!-- google analitycs -->" | safeHTML }}
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '{{ .Site.Params.googleAnalitycsID }}', 'auto');
-    ga('send', 'pageview');
-  </script>
+    <!-- RSS -->
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
 
+    <!-- JavaScript -->
+    {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
+    {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint }}
+    <script type="text/javascript"
+            src="{{ $secureHeaderJS.Permalink }}"
+            integrity="{{ $secureHeaderJS.Data.Integrity }}"
+            crossorigin="anonymous"></script>
+
+
+    {{ if not .Site.Params.disableThemeSwitcher }}
+        {{ $anatoleThemeSwitcher := resources.Get "js/anatole-theme-switcher.js" }}
+        {{ $secureThemeSwitcherJS := $anatoleThemeSwitcher |  resources.Minify | resources.Fingerprint }}
+        <script type="text/javascript"
+                src="{{ $secureThemeSwitcherJS.Permalink }}"
+                integrity="{{ $secureThemeSwitcherJS.Data.Integrity }}"
+                crossorigin="anonymous"></script>
+    {{ end }}
+
+    {{- $js := "" -}}
+    {{- range .Site.Params.customJs -}}
+        {{- if or (in . "http://") (in . "https://") -}}
+            <script src="{{ . | relURL }}"></script>
+        {{- else -}}
+            {{- $customJS := resources.Get . -}}
+            {{- if $customJS -}}
+                {{- if eq $js "" -}}
+                    {{- $js = $customJS -}}
+                {{- else -}}
+                    {{- $js = slice $js $customJS | resources.Concat "js/custom.js" -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- if ne $js "" -}}
+    {{- $secureJS := $js |  resources.Minify | resources.Fingerprint -}}
+    <script type="text/javascript"
+            src="{{ $secureJS.Permalink }}"
+            integrity="{{ $secureJS.Data.Integrity }}"
+            crossorigin="anonymous"></script>
+    {{- end -}}
+
+    <!-- Twitter Cards -->
+    {{ template "_internal/twitter_cards.html" . }}
 </head>
