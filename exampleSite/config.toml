@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Website of Jane Doe"
+title = "Hello, I'm Chris v1 test!"
 theme = "anatole"
 summarylength = 10
 enableEmoji = true
@@ -29,7 +29,7 @@ favicon = "favicons/"
 # example ["css/custom.css"]
 customCss = []
 # example ["js/custom.js"]
-customJs = [] 
+customJs = []
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
