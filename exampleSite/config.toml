@@ -19,10 +19,10 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [params]
-title = "I'm Jane Doe"
-author = "Jane Doe"
+title = "Hello, I'm Chris v1 test!"
+author = "Christopher Van Dusen"
 #copyright = "2020-2021"
-description = "Call me Jane"
+description = "Test 2"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
