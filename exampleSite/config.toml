@@ -87,11 +87,16 @@ url = "https://blog.fwd2cv.com"
 icon = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
 <<<<<<< HEAD
+<<<<<<< HEAD
 title = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
 =======
 title = medium
 >>>>>>> parent of f21354e (Update config.toml)
+=======
+title = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
+{{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
+>>>>>>> parent of 49cda85 (Update config.toml)
 url = "https://blog.fwd2cv.com"
 
 
