@@ -82,6 +82,11 @@ icon = "fab fa-medium"
 title = "medium"
 url = "https://blog.fwd2cv.com"
 
+[[params.socialIcons]]
+icon = 
+title = "medium"
+url = "https://blog.fwd2cv.com"
+
 
 ## Menu items
 
