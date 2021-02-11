@@ -22,9 +22,9 @@ pygmentsCodefencesGuessSyntax = true
 title = "Hello, I'm Chris!"
 author = "Christopher Van Dusen"
 copyright = "2020-2021"
-description = "Wake up early. Drink Coffee. Work Hard. \n  \nA Detroiter who is inspired by the hustle, loves building things from the rock bottom, and is constantly in search for another cup of coffee. Despite growing up on Motown, I actually prefer listening to Hip Hop and Jazz.  Definitely, rooted deep in the Motor City, but I still love to get out and explore different cities and experience new cultures."
+description = "Wake up early. Drink Coffee. Work Hard. \n  \n Detroit, Michigan"
 profilePicture = "images/profile.jpg"
-keywords = ""
+keywords = "test"
 favicon = "favicons/"
 # example ["css/custom.css"]
 customCss = []
