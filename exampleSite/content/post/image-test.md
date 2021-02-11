@@ -6,7 +6,7 @@ description = "Guide to Thumbnails in Hugo"
 tags = [
     "thumbnail",
 ]
-thumbnail= "http://www.amazon.com"
+thumbnail= "images/landscape.jpg"
 +++
 Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter to an image such as `"images/landscape.jpg"`. 
 
@@ -23,7 +23,7 @@ description = "Guide to Thumbnails in Hugo"
 tags = [
     "thumbnail",
 ]
-thumbnail= "http://www.amazon.com"
+thumbnail= "images/landscape.jpg"
 +++
 ```
 
