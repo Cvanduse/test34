@@ -73,12 +73,12 @@ title = "e-mail"
 url = "mailto:fwd2cv@gmail.com"
 
 [[params.socialIcons]]
-icon = "fa fa-twitter"
+icon = "fab fa-twitter"
 title = "twitter"
 url = "https://twitter.com/FWD2CV"
 
 [[params.socialIcons]]
-icon = "fa fa-medium"
+icon = "fab fa-medium"
 title = "medium"
 url = "https://blog.fwd2cv.com"
 
