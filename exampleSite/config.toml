@@ -22,7 +22,7 @@ pygmentsCodefencesGuessSyntax = true
 title = "Hello, I'm Chris!"
 author = "Christopher Van Dusen"
 copyright = "2020-2021"
-description = "Wake up early. Drink Coffee. Work Hard. \n  \n Detroit, Michigan"
+description = "Wake up early. Drink Coffee. Work Hard. \n  \nDetroit, Michigan"
 profilePicture = "images/profile.jpg"
 keywords = "test"
 favicon = "favicons/"
@@ -73,12 +73,12 @@ title = "e-mail"
 url = "mailto:fwd2cv@gmail.com"
 
 [[params.socialIcons]]
-icon = "fas fa-twitter"
+icon = "fa fa-twitter"
 title = "twitter"
 url = "https://twitter.com/FWD2CV"
 
 [[params.socialIcons]]
-icon = "fas fa-medium"
+icon = "fa fa-medium"
 title = "medium"
 url = "https://blog.fwd2cv.com"
 
