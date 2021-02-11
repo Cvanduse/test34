@@ -86,8 +86,12 @@ url = "https://blog.fwd2cv.com"
 [[params.socialIcons]]
 icon = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
+<<<<<<< HEAD
 title = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
+=======
+title = medium
+>>>>>>> parent of f21354e (Update config.toml)
 url = "https://blog.fwd2cv.com"
 
 
