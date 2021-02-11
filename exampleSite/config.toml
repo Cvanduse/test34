@@ -73,9 +73,16 @@ title = "e-mail"
 url = "mailto:fwd2cv@gmail.com"
 
 [[params.socialIcons]]
-icon = "fas fa-envelope"
-title = "e-mail"
-url = "mailto:mail@alexbilz.com"
+icon = "fas fa-twitter"
+title = "twitter"
+url = "https://twitter.com/FWD2CV"
+
+[[params.socialIcons]]
+icon = "fas fa-medium"
+title = "medium"
+url = "https://blog.fwd2cv.com"
+
+
 
 ## Menu items
 
