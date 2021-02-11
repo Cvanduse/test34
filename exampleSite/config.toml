@@ -83,6 +83,7 @@ title = "medium"
 url = "https://blog.fwd2cv.com"
 
 
+<<<<<<< HEAD
 [[params.socialIcons]]
 icon = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
@@ -100,6 +101,8 @@ title = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 url = "https://blog.fwd2cv.com"
 
 
+=======
+>>>>>>> parent of 235be66 (Update config.toml)
 
 ## Menu items
 
