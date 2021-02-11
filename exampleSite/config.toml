@@ -86,7 +86,8 @@ url = "https://blog.fwd2cv.com"
 [[params.socialIcons]]
 icon = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
 {{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
-title = medium
+title = {{< button relref="/" [class="..."] >}}Get Home{{< /button >}}
+{{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
 url = "https://blog.fwd2cv.com"
 
 
