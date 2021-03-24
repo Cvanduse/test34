@@ -31,5 +31,3 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 ## Vimeo Simple Shortcode
 
-{{<% button href="https://getgrav.org/" %}}Get Grav{{% /button %>}} 
-
