@@ -37,6 +37,7 @@
   --chr-vm-color: #111111;
   --chr-l-color: #ae81ff;
   --chr-ld-color: #d88200;
+  --chr-ldd-color: #ffffff;
   --chr-s-color: #d88200;
   --chr-sa-color: #d88200;
   --chr-sb-color: #d88200;
@@ -169,7 +170,7 @@ html[data-theme='dark'] {
 /* NameVariableInstance */ .chroma .vi { color: var(--chr-vi-color) }
 /* NameVariableMagic */ .chroma .vm { color: var(--chr-vm-color) }
 /* Literal */ .chroma .l { color: var(--chr-l-color) }
-/* LiteralDate */ .chroma .ld { color: var(--chr-ld-color) }
+/* LiteralDate */ .chroma .ld { color: var(--chr-ldd-color) }
 /* LiteralString */ .chroma .s { color: var(--chr-s-color) }
 /* LiteralStringAffix */ .chroma .sa { color: var(--chr-sa-color) }
 /* LiteralStringBacktick */ .chroma .sb { color: var(--chr-sb-color) }
