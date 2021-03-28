@@ -1,7 +1,7 @@
 +++
 author = "Hugo Authors"
-title = "test"
-date = "2021"
+title = ""
+date = "1"
 description = "Lorem Ipsum Dolor Si Amet"
 tags = [
     "",
