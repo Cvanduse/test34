@@ -14,6 +14,9 @@ Thumbnails can be enabled easily by setting the `thumbnail` parameter in the fro
 
 [(images/landscape.jpg)](https://nodesource.com/products/nsolid)
 
+<a href="http://google.com.au/" rel="some text">![Foo](http://www.google.com.au/images/nav_logo7.png)</a>
+
+
 Make sure to copy the image the `static/images/` directory.
 
 If put together, it will look like this (that's in fact this post's frontmatter):
