@@ -1,8 +1,8 @@
 +++
 author = "Hugo Authors"
-title = "Guide to Thumbnails in Hugo"
+title = "Guide to Thumbnails in Hugo 2"
 date = "2019-03-04"
-description = "Guide to Thumbnails in Hugo"
+description = "Guide to Thumbnails in Hugo 2"
 tags = [
     "",
 ]
