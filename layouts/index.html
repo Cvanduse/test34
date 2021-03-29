@@ -15,19 +15,11 @@
 
         <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
             {{ if .Params.thumbnail }}
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-<section class="section">
-<div class="container">
-<div class="columns is-centered">
-<div class="column is-half">
-<a class="box" href="https://bio.fwd2cv.com" aria-label="Pizza Dough">
-<div class="is-flex">
-<div>
-<div>Title</div>
-<small class="has-text-grey">Sub Title</small>
-</div>
-</div>
-<div style="margin-top:.1em">
+            <div class="post-thumbnail">
+                <a href="{{ .RelPermalink }}">
+                <img src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy">
+                </a>
+            </div>
             {{ end }}
             <div class="post-title">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
