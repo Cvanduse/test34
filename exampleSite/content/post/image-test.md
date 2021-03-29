@@ -16,6 +16,11 @@ Thumbnails can be enabled easily by setting the `thumbnail` parameter in the fro
 
 <a href="http://google.com.au/" rel="some text">![Foo](http://www.google.com.au/images/nav_logo7.png)</a>
 
+[![homepage][1]][2]
+
+[1]:  http://commonmark.org/help/images/favicon.png
+[2]:  http://commonmark.org "Redirect to homepage"
+
 
 Make sure to copy the image the `static/images/` directory.
 
