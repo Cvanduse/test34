@@ -1,12 +1,4 @@
-
-
 {{ define "main" }}
-<html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"></head><body><main role="main"><section class="section"><div class="container"><div class="columns is-centered"><div class="column is-half"><a class="box" href="https://bio.fwd2cv.com/" aria-label="Pizza Dough"><div class="is-flex"><figure class="image is-48x48" style="margin-right:.5em"></figure><div><div>Pizza Dough</div><small class="has-text-grey">Quick Rise White Pizza Dough</small></div></div><div style="margin-top:.5em">
-
-
-</div></a></div></div></div></section></main></body>
-<html>
 
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <!-- (Optional) Home
@@ -16,6 +8,7 @@
             One can set `mainSections = [""]` and have the content/_index.md specified here
         -->
         {{ .Content }}
+    </div>
 
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
@@ -38,15 +31,15 @@
             <div class="post-footer">
                 <div class="meta">
                     <div class="info">
-                        <em class=""></em>
-                            <span class="date">{{ if isset .Site.Params "indexdateformat" }}
-                                                 {{ .Date.Format .Site.Params.indexDateFormat }}
-                                             {{ else }} {{.Date.Format ""}}
+                        <em class="fas fa-calendar-day"></em>
+                            <span class="date">{{ if isset .Site.Params "indexdateformat" }} 
+                                                 {{ .Date.Format .Site.Params.indexDateFormat }} 
+                                             {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}} 
                                              {{ end }}</span>
                         {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
                         {{ with .Params.tags }}
                             {{- range $index, $el := . -}}
-                                <a class=""
+                                <a class="tag"
                                    href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
                             {{- end -}}
                         {{ end }}
