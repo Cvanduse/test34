@@ -6,7 +6,7 @@ description = "Guide to Thumbnails in Hugo"
 tags = [
     "thumbnail",
 ]
-thumbnail= [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+thumbnail= "images/landscape.jpg"
 +++
 Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter to an image such as `"images/landscape.jpg"`. 
 
