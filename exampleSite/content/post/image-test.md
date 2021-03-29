@@ -10,6 +10,8 @@ thumbnail= "images/landscape.jpg"
 +++
 Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter to an image such as `"images/landscape.jpg"`. 
 
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
 Make sure to copy the image the `static/images/` directory.
 
 If put together, it will look like this (that's in fact this post's frontmatter):
