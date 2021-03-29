@@ -21,19 +21,26 @@
                 </a>
             </div>
             {{ end }}
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-            <section class="section">
-            <div class="container">
-            <div class="columns is-centered">
-            <div class="column is-half">
-            <a class="box" href="https://bio.fwd2cv.com" aria-label="Pizza Dough">
-            <div class="is-flex">
-            <div>
-            <div>Title</div>
-            <small class="has-text-grey">Sub Title</small>
+            <div class="post-title">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
             </div>
+            <div class="post-content">
+                <div class="p_part"><p>{{ .Summary }}</p></div>
             </div>
-            <div style="margin-top:.1em">
+            <div class="post-footer">
+                <div class="meta">
+                    <div class="info">
+                        <em class=""></em>
+                            <span class="date">{{ if isset .Site.Params "indexdateformat" }}
+                                                 {{ .Date.Format .Site.Params.indexDateFormat }}
+                                             {{ else }} {{.Date.Format ""}}
+                                             {{ end }}</span>
+                        {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
+                        {{ with .Params.tags }}
+                            {{- range $index, $el := . -}}
+                                <a class=""
+                                   href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
                             {{- end -}}
                         {{ end }}
                     </div>
