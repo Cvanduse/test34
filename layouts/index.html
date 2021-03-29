@@ -31,15 +31,15 @@
             <div class="post-footer">
                 <div class="meta">
                     <div class="info">
-                        <em class="fas fa-calendar-day"></em>
+                        <em class=""></em>
                             <span class="date">{{ if isset .Site.Params "indexdateformat" }}
                                                  {{ .Date.Format .Site.Params.indexDateFormat }}
-                                             {{ else }} {{.Date.Format ""}} 
+                                             {{ else }} {{.Date.Format ""}}
                                              {{ end }}</span>
                         {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
                         {{ with .Params.tags }}
                             {{- range $index, $el := . -}}
-                                <a class="tag"
+                                <a class=""
                                    href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
                             {{- end -}}
                         {{ end }}
