@@ -33,7 +33,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #bbbbbb;
+  color: #b38d19;
   transition: color .2s ease; }
   a:hover {
     color: #d9c68c; }
@@ -67,7 +67,7 @@ article {
         padding-left: 30px; } }
 
 blockquote p {
-  border-left: #bbbbbb 3px solid;
+  border-left: #b38d19 3px solid;
   padding: 0 15px; }
 
 p code {
@@ -245,7 +245,7 @@ h1, h2, h3, h4 {
   .index-line span {
     display: inline-block;
     color: #111111;
-    border-top: #bbbbbb 3px solid;
+    border-top: #b38d19 3px solid;
     margin-top: -1px;
     opacity: .9;
     font-size: 1rem; }
@@ -371,7 +371,7 @@ h1, h2, h3, h4 {
     .main-content h1::before, .main-content h2::before, .main-content h3::before, .main-content h4::before, .main-content h5::before, .main-content h6::before {
       position: absolute;
       content: "#";
-      color: #bbbbbb;
+      color: #b38d19;
       font-weight: normal;
       transform: translateX(-25px); }
       @media screen and (max-width: 800px) {
