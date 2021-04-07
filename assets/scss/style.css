@@ -245,7 +245,7 @@ h1, h2, h3, h4 {
   .index-line span {
     display: inline-block;
     color: #111111;
-    border-top: #111111 3px solid;
+    border-top: #6c757d 3px solid;
     margin-top: -1px;
     opacity: .9;
     font-size: 1rem; }
