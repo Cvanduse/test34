@@ -36,7 +36,7 @@ a {
   color: #e83e8c;
   transition: color .2s ease; }
   a:hover {
-    color: #d9c68c; }
+    color: #e83e8c; }
 
 article {
   margin: 4vh 0;
@@ -86,7 +86,7 @@ h1, h2, h3, h4 {
   position: relative;
   width: 100vw;
   padding: 7vmin 0;
-  background-color: #ffffff; }
+  background-color: #e83e8c; }
   @media screen and (max-width: 800px) {
     .site-logo__wrap {
       border-bottom: #e6e6e6 1px solid;
@@ -245,7 +245,7 @@ h1, h2, h3, h4 {
   .index-line span {
     display: inline-block;
     color: #111111;
-    border-top: #b38d19 3px solid;
+    border-top: #e83e8c 3px solid;
     margin-top: -1px;
     opacity: .9;
     font-size: 1rem; }
