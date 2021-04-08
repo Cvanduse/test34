@@ -86,10 +86,13 @@ h1, h2, h3, h4 {
   position: relative;
   width: 100vw;
   padding: 7vmin 0;
-  background-color: #e83e8c; }
+/*
+ * Updated Header
+ */  
+  background-color: #F8F9FA; }
   @media screen and (max-width: 800px) {
     .site-logo__wrap {
-      border-bottom: #e6e6e6 1px solid;
+      border-bottom: #F8F9FA 1px solid;
       padding: 7px 0; } }
 
 .site-logo {
@@ -229,7 +232,9 @@ h1, h2, h3, h4 {
   @media screen and (max-width: 800px) {
     .index-displayImg {
       height: 28vh; } }
-
+/*
+ * Updated Lines
+ */ 
 .index-line {
   position: relative;
   margin: 0 auto;
@@ -237,15 +242,18 @@ h1, h2, h3, h4 {
   text-align: center;
   width: 50vw;
   height: 5vh;
-  border-top: #e6e6e6 1px solid;
+  border-top: #282A3E 1px solid;
   line-height: 5vh; }
   @media screen and (max-width: 800px) {
     .index-line {
       width: 90vw; } }
+  /*
+ * Updated Box
+ */ 
   .index-line span {
     display: inline-block;
     color: #111111;
-    border-top: #e83e8c 3px solid;
+    border-top: #118AB2 3px solid;
     margin-top: -1px;
     opacity: .9;
     font-size: 1rem; }
@@ -264,7 +272,10 @@ h1, h2, h3, h4 {
     color: #aaaaaa;
     font-size: .8rem;
     letter-spacing: 1px;
-    border: #aaaaaa 1px solid;
+     /*
+ * Updated Box
+ */ 
+    border: #062B38 1px solid;
     transition: all .2s ease; }
     @media screen and (max-width: 800px) {
       .index-sns a {
@@ -274,7 +285,7 @@ h1, h2, h3, h4 {
         font-size: .7rem; } }
     .index-sns a:hover {
       color: #ffffff;
-      background-color: #248baa; }
+      background-color: #118AB2; }
 
 .index-posts {
   position: relative;
