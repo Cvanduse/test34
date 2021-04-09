@@ -33,10 +33,10 @@ body {
 
 a {
   text-decoration: none;
-  color: #F3A000;
+  color: #b38d19;
   transition: color .2s ease; }
   a:hover {
-    color: #1DA500; }
+    color: #d9c68c; }
 
 article {
   margin: 4vh 0;
@@ -86,13 +86,10 @@ h1, h2, h3, h4 {
   position: relative;
   width: 100vw;
   padding: 7vmin 0;
-/*
- * Updated Header
- */  
-  background-color: #F8F9FA; }
+  background-color: #ffffff; }
   @media screen and (max-width: 800px) {
     .site-logo__wrap {
-      border-bottom: #F8F9FA 1px solid;
+      border-bottom: #e6e6e6 1px solid;
       padding: 7px 0; } }
 
 .site-logo {
@@ -232,9 +229,7 @@ h1, h2, h3, h4 {
   @media screen and (max-width: 800px) {
     .index-displayImg {
       height: 28vh; } }
-/*
- * Updated Lines
- */ 
+
 .index-line {
   position: relative;
   margin: 0 auto;
@@ -242,18 +237,15 @@ h1, h2, h3, h4 {
   text-align: center;
   width: 50vw;
   height: 5vh;
-  border-top: #282A3E 1px solid;
+  border-top: #e6e6e6 1px solid;
   line-height: 5vh; }
   @media screen and (max-width: 800px) {
     .index-line {
       width: 90vw; } }
-  /*
- * Updated Box
- */ 
   .index-line span {
     display: inline-block;
     color: #111111;
-    border-top: #118AB2 3px solid;
+    border-top: #b38d19 3px solid;
     margin-top: -1px;
     opacity: .9;
     font-size: 1rem; }
@@ -272,10 +264,7 @@ h1, h2, h3, h4 {
     color: #aaaaaa;
     font-size: .8rem;
     letter-spacing: 1px;
-     /*
- * Updated Box
- */ 
-    border: #062B38 1px solid;
+    border: #aaaaaa 1px solid;
     transition: all .2s ease; }
     @media screen and (max-width: 800px) {
       .index-sns a {
@@ -285,7 +274,7 @@ h1, h2, h3, h4 {
         font-size: .7rem; } }
     .index-sns a:hover {
       color: #ffffff;
-      background-color: #118AB2; }
+      background-color: #d9c68c; }
 
 .index-posts {
   position: relative;
