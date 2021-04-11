@@ -33,10 +33,10 @@ body {
 
 a {
   text-decoration: none;
-  color: #b38d19;
+  color: #118AB2;
   transition: color .2s ease; }
   a:hover {
-    color: #d9c68c; }
+    color: #062B38; }
 
 article {
   margin: 4vh 0;
