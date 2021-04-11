@@ -1,12 +1,36 @@
-// config
-@import "config/config";
+@import "variables";
 
-// pages
-@import "pages/base";
-@import "pages/header";
-@import "pages/index";
-@import "pages/main";
-@import "pages/footer";
+@import "typography";
 
-// keyframes
-@import "keyframes/keyframes";
+@import "mixins";
+
+@import "buttons";
+
+@import "common";
+
+@import "components/navigation";
+
+@import "components/hero";
+
+@import "components/counter";
+
+@import "components/project";
+
+@import "components/blog";
+
+@import "components/testimonial";
+
+@import "components/cta";
+
+@import "components/about";
+
+@import "components/expertise";
+
+@import "components/client";
+
+@import "components/team";
+
+@import "components/contact";
+
+@import "components/footer";
+
